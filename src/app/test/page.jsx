@@ -3,8 +3,8 @@ import React from "react";
 
 const TestInput = () => {
   const [focus, setFocus] = React.useState(false);
-  const inActiveLabel = "block text-sm text-gray-600";
-  const activeLabel = "block text-sm text-gray-600 translate-y-3.5 scale-75";
+  const inActiveLabel = "block text-sm text-gray-600 absolute ";
+  const activeLabel = "block text-sm text-gray-600 translate-x-3.5 scale-75";
   const handleFocus = () => {
     setFocus(true);
   };
@@ -13,10 +13,11 @@ const TestInput = () => {
     setFocus(false);
   };
   return (
-    <div className="w-1/2 p-2">
-      TestInput Page Form 1
-      <form>
-        <div className="form-input">
+    <div className="w-1/2 m-4">
+      TestInput Page
+      <form className="my-4 pt-4">
+        Form 1
+        <div className="">
           <input
             id="my-input"
             type="text"
@@ -32,13 +33,16 @@ const TestInput = () => {
           </label>
         </div>
       </form>
-      Form 2
-      <form action="">
+      <form action="" className="my-4  pt-4 relative ">
+        Form 2
         <div>
-          <input
-            type="text"
-            className="block w-full p-2 pl-4 text-gray-700 focus:border-b-2 "
-          />
+          <label htmlFor="" className="absolute">
+            Input is in the label
+            <input
+              type="text"
+              className="block w-full p-2 pl-4 text-gray-700 border-b-2 focus:border-b-2 "
+            />
+          </label>
         </div>
       </form>
     </div>
