@@ -1,5 +1,7 @@
 import NextAuth from "next-auth";
 import EmailProvider from "next-auth/providers/email";
+import { MongoDBAdapter } from "@auth/mongodb-adapter";
+import clientPromise from "@/app/lib/mongodb/client";
 
 export const {
   handlers: { GET, POST },
@@ -7,6 +9,7 @@ export const {
   signIn,
   signOut,
 } = NextAuth({
+  adapter: MongoDBAdapter(clientPromise),
   providers: [
     EmailProvider({
       server: {
