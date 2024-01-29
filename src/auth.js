@@ -23,4 +23,11 @@ export const {
       from: process.env.EMAIL_FROM,
     }),
   ],
+  callbacks: {
+    session({ session, user }) {
+      // session.user.roles = [...(user.roles ?? ["user"])];
+      session.user.role = user.role ?? "user";
+      return session;
+    },
+  },
 });
