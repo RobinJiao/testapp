@@ -3,8 +3,8 @@ import { MongoClient } from "mongodb";
 
 const uri = process.env.MONGO;
 const options = {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
+  // useUnifiedTopology: true,
+  // useNewUrlParser: true,
 };
 
 let client;
